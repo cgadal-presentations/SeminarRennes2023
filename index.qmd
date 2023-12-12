@@ -1,0 +1,1208 @@
+---
+title: "Unraveling the complexity of geophysical systems"
+subtitle: "using idealized analogue configurations"
+author: "Cyril Gadal"
+institute: "Institut de Mécanique des Fluides de Toulouse (IMFT), France"
+format:
+  revealjs:
+    theme: [custom.scss]
+    width: 1920
+    height: 1080
+    callout-icon: false
+    slide-number: true
+    auto-stretch: false
+    viewDistance: 50
+    template-partials:
+      - title-slide.html
+---
+
+## Academic background in short
+
+:::: {.columns}
+::: {.column width=50%}
+
+::: {data-id="false" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](index_files/src/background/dunes.svg){width=90%}
+:::
+
+::: {data-id="false" .callout-tip appearance="minimal"}
+## PostDoc on turbidity currents (IMFT, 2021--2022)
+![with Laurent Lacaze & Matthieu Mercier](index_files/src/background/turbidity_current.svg){width=82%}
+:::
+
+:::
+::: {.column width=50%}
+
+::: {data-id="false" .callout-important appearance="minimal"}
+## PostDoc on the clogging of riverbeds (IMFT, 2023)
+![with Laurent Lacaze & Matthieu Mercier](index_files/src/background/ofb_colmatage.svg){width=80%}
+:::
+
+::: {data-id="manchester" .callout-note appearance="minimal"}
+## PostDoc on the self-organization of cohesive granular flows (Manchester)
+![with Nico Gray & Chris Johnson](index_files/src/background/figure_self_channel.svg){width=90%}
+:::
+
+:::
+::::
+
+## Common point
+
+::: {.important style="margin:2%"}
+
+[Apprehending complex geophysical systems using simple analogue configurations!]{.boxed-orange}
+
+:::
+
+:::: {.columns}
+
+::: {.column .vcentered width=33%}
+::: {style="margin-top:1.15em"}
+
+:::: {.columns}
+::: {.column .vcentered width=80%}
+
+::: {.callout-note appearance="minimal"}
+## Fundamental knowledge
+
+- smaller scales
+- isolated process knowledge
+- ...
+
+:::
+:::
+
+::: {.column .vcentered width=20%}
+::: {style="text-align:center"}
+
+&rarr;
+
+:::
+:::
+::::
+
+:::
+:::
+
+::: {.column .vcentered width=33%}
+::: {.callout-warning appearance="minimal"}
+## Complex natural system
+
+- many entangled processes
+- wide range of spatial and temporal scales
+- difficult measurements
+
+:::
+
+::: {.nomargin style="text-align:center; margins:0"}
+
+&darr;
+
+:::
+
+::: {.callout-tip appearance="minimal"}
+## Simpler analogue configurations
+
+- selected/controllable processes
+- experiments/numerical/analytical models
+
+:::
+
+::: {style="text-align:center; margins:0"}
+
+&darr;
+
+:::
+
+::: {.callout-warning appearance="minimal"}
+## Going back to the field
+
+- validation from observations
+- guide in the interpretation of field data
+
+:::
+:::
+
+::: {.column .vcentered width=33%}
+::: {style="margin-top:1.15em"}
+
+:::: {.columns}
+
+::: {.column .vcentered width=20%}
+::: {style="text-align:center"}
+
+&rarr;
+
+:::
+:::
+
+::: {.column .vcentered width=80%}
+
+::: {.callout-note appearance="minimal"}
+## Fundamental knowledge
+
+- interaction between process
+- analytical models
+- ...
+
+:::
+:::
+
+::::
+
+:::
+:::
+
+::::
+
+
+
+
+# From a hydrodynamic instability to dune patterns shaping sand seas
+
+::: {style="margin-top:100px"}
+![Dunes gathering at the bottom of a small mountain in the Taklamacan desert, in China.](index_files/src/dunes/images/DunePanorama_small.jpg){height="500px" fig-align="center"}
+:::
+
+## Sand dunes as a complex system
+
+:::: {.columns .v-center-container}
+::: {.r-stack .column width="100%"}
+
+![Window width: $10^4$ km. @GoogleEarth](index_files/src/dunes/images/zoom1.jpg){fig-align=center width=75%}
+
+:::
+::::
+
+## Sand dunes as a complex system
+
+:::: {.columns .v-center-container}
+::: {.r-stack .column width="100%"}
+
+![Window width: $10^3$ km. @GoogleEarth](index_files/src/dunes/images/zoom2.jpg){fig-align=center width=75%}
+
+:::
+::::
+
+## Sand dunes as a complex system
+
+:::: {.columns .v-center-container}
+::: {.r-stack .column width="100%"}
+
+![Window width: $10^2$ km. @GoogleEarth](index_files/src/dunes/images/zoom3.jpg){fig-align=center width=75%}
+
+
+:::
+::::
+
+## Sand dunes as a complex system
+
+:::: {.columns .v-center-container}
+::: {.column .r-stack width="100%"}
+
+![Window width: $10^1$ km. @GoogleEarth](index_files/src/dunes/images/zoom3_last.jpg){fig-align=center width=75%}
+
+::: {.fragment fragment-index="1" style="text-align:center"}
+::: {.transparent-background style="padding:1%"}
+Regular patterns at all scales!
+:::
+:::
+ 
+:::
+::::
+
+## Sand dunes as a complex system
+
+::: {.r-stack}
+
+![Dunes in the Rub’al-Khali desert, Yemen](index_files/src/dunes/images/intro_dune_0.svg){fig-align="center"}
+
+![Dunes in the Rub’al-Khali desert, Yemen](index_files/src/dunes/images/intro_dune.svg){fig-align="center" .fragment}
+
+:::
+
+::: {.fragment style="font-weight:bolder; text-align:center; margin-top:1em"}
+
+[What controls the patterns/shapes, and associated dynamics?]{.boxed-orange}
+
+:::
+
+::: footer
+
+credits: GeorgeSteimetz (main image), NASA (martian dunes), Jana Majk (underwater ripples), Chris M Morris (nebkha), Paul van Schalkwyk (sand storm)
+
+:::
+
+## A conceptual model for sand dunes emergence
+
+:::: {.columns}
+
+::: {.column width=30%}
+::: {.r-stack}
+
+![](index_files/src/dunes/figures/circular_diagram_0.svg){fig-align="center"}
+
+![](index_files/src/dunes/figures/circular_diagram_1.svg){.fragment fragment-index=1 fig-align="center"}
+
+![](index_files/src/dunes/figures/circular_diagram_2.svg){.fragment fragment-index=2 fig-align="center"}
+
+![](index_files/src/dunes/figures/circular_diagram_3.svg){.fragment fragment-index=3 fig-align="center"}
+
+:::
+:::
+
+::: {.column width=70%}
+
+::: {.r-stack}
+
+![](index_files/src/dunes/figures/sketch_instability_0.svg){fig-align="center"}
+
+![](index_files/src/dunes/figures/sketch_instability_1.svg){.fragment fragment-index=1 fig-align="center"}
+
+![](index_files/src/dunes/figures/sketch_instability_2.svg){.fragment fragment-index=2 fig-align="center"}
+
+![](index_files/src/dunes/figures/sketch_instability_3.svg){.fragment fragment-index=3 fig-align="center"}
+
+![](index_files/src/dunes/figures/sketch_instability_4.svg){.fragment fragment-index=4 fig-align="center"}
+
+:::
+:::
+::::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width=60%}
+
+![](index_files/src/dunes/figures/temporal_growth_rate.svg){.fragment fragment-index=5 fig-align="center"}
+
+:::
+
+::: {.column width=40% .fragment fragment-index=6}
+
+- Under a unidirectional wind:
+  - periodic ridges
+  -  perpendicular to wind direction
+  -  $\lambda_{\rm max} \sim 15~\textrm{m}$, [$\lambda_{\rm c} \sim 10~\textrm{m}$]{.highlight-red} (eolian, earth)
+
+::: {.important}
+[$\rightarrow$ Direct validation?]{.boxed-orange}
+:::
+
+:::
+::::
+
+
+
+## Direct validation from field data
+
+:::: { .columns}
+
+::: {.column width=50%}
+::: {.callout-warning appearance="minimal"}
+# Tenger desert, China
+
+![](index_files/src/dunes/images/Ping_picture.svg){fig-align="center" width=100% style="margin-bottom:0"}
+
+
+![](index_files/src/dunes/figures/temporal_growth_rate_CHINA.svg){fig-align="center" style="margin-top:0"}
+
+:::
+:::
+
+::: {.column width=50%}
+::: {.callout-warning appearance="minimal"}
+# White Sands dune field, USA
+
+![](index_files/src/dunes/images/white_sands.png){fig-align="center" width=43.5% style="margin-bottom:0"}
+
+
+![](index_files/src/dunes/figures/spatial_instability_WS.svg){fig-align="center"}
+
+
+:::
+:::
+
+::::
+
+::: {.fragment style="text-align:center"}
+Hardly controllable $\rightarrow$ difficult to study specific parameters $\rightarrow$ need for controllable analogue systems!
+:::
+
+::: footer
+Gadal et al. (2020) *"Spatial and temporal development of incipient dunes"*, Lü et al. (2021) *"Direct validation of dune instability theory"*
+:::
+
+## An analogue subaqueous experiment
+
+- aeolian dunes: $\lambda_{\rm min} \sim 10~{\rm m}$ $\rightarrow$ impossible in the lab!
+- $L_{\rm subaqueous} \sim \frac{\rho_{\rm air}}{\rho_{\rm water}} L_{\rm eolian}$ $\rightarrow$ possible!
+  
+:::: {.columns}
+
+::: {.column width=60%}
+
+![Experimental set-up (@Sylvain Courrech du Pont, MSC)](index_files/src/dunes/figures/Figure_manip.svg){fig-align="center"}
+
+:::
+
+::: {.column width=40%}
+
+![Parallel ridges emerging from a randomly perturbed bed.](index_files/src/dunes/videos/manip_video.mp4){fig-align="center" height=486}
+
+:::
+
+::::
+
+{{< fa solid triangle-exclamation >}} only **analogue** to eolian dunes, i.e fluid viscosity is different (hydrodynamic, $\mathcal{R}e_{\rm p}, transport modes)$!
+
+
+::: footer
+Gadal et al. (2019) *"Incipient bedforms in a bidirectional wind regime"*
+:::
+
+## An analogue subaqueous experiment
+
+$\rightarrow$ Pattern orientation as a function of the flow orientations:
+
+![](index_files/src/dunes/figures/Transition_pattern_orientation.svg){fig-align="center"}
+
+$\rightarrow$ Pattern wavelength as a function of the flow velocity:
+
+![](index_files/src/dunes/figures/figure_expe_lambda.svg){fig-align="center"}
+
+
+
+::: footer
+Gadal et al. (2019) *"Incipient bedforms in a bidirectional wind regime"*
+:::
+
+## An analogue cellular automaton model for more complex configurations
+
+:::: {.columns}
+::: {.column .vcentered width=49%}
+
+![Statistical state transitions in the ReSCAL dune model [Gao et al. 2015]](index_files/src/dunes/images/Figure_transitions.svg){fig-align="center" width=90%  style="border-right: 2px solid black;"}
+
+:::
+
+::: {.column .vcentered width=50%}
+
+![Barchan and star dune in the ReSCAL dune model [@Clément Narteau]](index_files/src/dunes/images/Figures_patterns_rescal.svg){fig-align="center" width=100%}
+
+:::
+:::: 
+
+<hr width=75%>
+
+:::: {.columns}
+
+::: {.column .vcentered width=50%}
+
+- global dynamics from nearest neighbor interactions
+- non-linearities of flow and granular physics
+
+:::
+
+::: {.column .vcentered width=50%}
+
+- able to reproduce many different dune patterns
+
+:::
+
+::::
+
+## An analogue cellular automaton model for more complex configurations
+
+
+$\rightarrow$ Shape of a sand pile under unimodal wind regimes
+
+![](index_files/src/dunes/images/figure_barchan_dome.svg){fig-align="center" width=70%}
+
+$\rightarrow$ Downwind side of a sand patch
+
+
+:::: {.columns}
+
+::: {.column .vcentered width=50%}
+
+![Rub’al-Khali desert, Yemen @George Steinmetz](index_files/src/dunes/images/complex_pattern_annoted.svg){fig-align="center" width=60%}
+
+:::
+
+::: {.column .vcentered width=50%}
+
+![](index_files/src/dunes/images/simu.gif){fig-align="center" width=80%}
+
+::: 
+
+::::
+
+::: footer
+
+Gao et al. (2018) *"Morphodynamics of barchan and dome dunes under variable wind regimes "*, Gadal et al. (2020) *"Periodicity in fields of elongating dunes"*
+
+:::
+
+## In a nutshell
+
+::: columns
+::: {.column width="50%" .vcentered .fragment .semi-fade-out fragment-index="1"}
+
+::: {.callout-note appearance="minimal"}
+# Analytical instability model for more complex situations
+
+- boundary conditions: spatio-temporal instability, convective
+
+![](index_files/src/dunes/figures/spatial_instability_WS.svg){fig-align="center"}
+
+- from unidirectional to any wind regimes: 3D model
+
+![](index_files/src/dunes/figures/Figure_sketch.svg){fig-align="center" width=80%}
+
+:::
+
+:::
+
+::: {.column width="50%" .vcentered}
+
+::: {.fragment .semi-fade-out fragment-index="1" style="margin-left:0.35em"}
+::: {.callout-note appearance="minimal"}
+# Non-linear dune patterns characterization
+
+![](index_files/src/dunes/figures/Figure_stable_linear.svg){fig-align="center" width=100%}
+
+:::
+:::
+
+::: {.callout-warning appearance="minimal"}
+# Linear dune properties
+
+Orientation = $\mathcal{F}({\rm wind~sequence}, {\rm sediment~properties}, {\rm sand~cover})$
+
+![](index_files/src/dunes/figures/Figure_lineardune_orientation_1.svg){fig-align="center" width=100%}
+
+:::
+
+:::
+:::
+
+## Using dune physics to interpret desert systems
+
+:::: {.columns}
+::: {.column .r-stack width=100%}
+
+![](index_files/src/dunes/figures/crossing_dunes_0.svg){fig-align="center"}
+
+![](index_files/src/dunes/figures/crossing_dunes_1.svg){fig-align="center" .fragment fragment-index="1"}
+
+![](index_files/src/dunes/figures/crossing_dunes_2.svg){fig-align="center" .fragment fragment-index="2"}
+
+![](index_files/src/dunes/figures/crossing_dunes_3.svg){fig-align="center" .fragment fragment-index="3"}
+
+![](index_files/src/dunes/figures/crossing_dunes_4.svg){fig-align="center" .fragment fragment-index="5"}
+
+![](index_files/src/dunes/figures/crossing_dunes_5.svg){fig-align="center" .fragment fragment-index="6"}
+
+![](index_files/src/dunes/figures/crossing_dunes_6.svg){fig-align="center" .fragment fragment-index="7"}
+
+::: {.fragment fragment-index="8" style="text-align:center"}
+::: {.transparent-background style="padding:1%"}
+Modern winds can explain all dune orientations!
+:::
+:::
+
+:::
+::::
+
+::: {.fragment fragment-index="4" }
+
+- Orientation = $\require{cancel} \mathcal{F}(\underbrace{\rm wind~sequence}_{?}, \cancel{\rm sediment~properties}, \underbrace{\rm sand~cover}_{\rm 2~orientations})$
+
+::: {style="text-align:center; font-weight: bolder;"}
+Three dune orientations? 
+:::
+
+::: {style="text-align:center; font-weight: bolder;"}
+Paleo-winds (big dunes) vs Modern winds (small dunes)
+:::
+
+:::
+
+
+::: footer
+
+Gadal et al. (2022) *"Local Wind Regime Induced by Giant Linear Dunes: Comparison of ERA5-Land Reanalysis with Surface Measurements"*
+
+:::
+
+## From sand dunes to particle-laden gravity currents 
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+
+![Sand storm over dunes, Sahara @EUMETSAT](index_files/src/sandstormoverdunes.jpg){fig-align=center width=80%}
+
+
+:::
+:::
+
+
+# Particle-laden gravity currents
+
+::: {style="margin-top:100px;"}
+![Powder snow avalanche at the Zinal ski station, in Switzerland @Zacharie Grossen](index_files/src/turbidity_currents/images/avalanche_crop.jpg){height="500px" fig-align="center"}
+:::
+
+## Particle-laden gravity (turbidity) currents
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+-   gravity-driven flow
+-   excess density = **suspended** particles (maybe combined with temperature, salinity or humidity differences)
+-   ubiquitous in many planetary environments
+
+::: {layout="[[1.005, 1.275, 1.303]]"}
+![Snow avalanche, Zinal, Switzerland @Zacharie Grossen](index_files/src/turbidity_currents/images/avalanche.png)
+
+![Pyroclastic flow, Sinabung, Indonesia @Jean-Guillaume Feignon](index_files/src/turbidity_currents/images/pyroclastic.png)
+
+![Dust storm, Phoenix, USA @Alan Stark](index_files/src/turbidity_currents/images/duststorm.png)
+:::
+:::
+:::
+
+## Particle-laden gravity (turbidity) currents
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+::: {.important style="margin-top:2%"}
+[Almost always destructive natural hazards.]{.highlight}
+:::
+
+::: r-stack
+::: {layout="[[1, 1.33, 1.5]]"}
+![Power transmission overturned by a powder snow avalanche, Switzerland. Caviezel et al. 2021](index_files/src/turbidity_currents/images/avalanche_pillar_down.png){.fragment .semi-fade-out fragment-index="1"}
+
+![Dammages by pyroclastic flow after the Merapi eruption, Indonesia. @Noer Cholik](index_files/src/turbidity_currents/images/merapi_2010_destruction.jpg){.fragment .semi-fade-out fragment-index="1"}
+
+![Dust storm, Phoenix, USA. @Mike Olbinski](index_files/src/turbidity_currents/images/Worldpix_Mike_Olbinski_2.jpg){.fragment .semi-fade-out fragment-index="1"}
+:::
+
+::: {.fragment fragment-index="1" style="text-align:center"}
+::: {.transparent-background style="padding:1%"}
+Hence, reliable modeling is needed!
+
+$\rightarrow$ determination of relevant processes and associated regimes
+:::
+:::
+:::
+:::
+:::
+
+## Particle-laden gravity currents as a complex system
+
+::: {.columns .v-center-container}
+::: {.column .r-stack width="100%"}
+![](index_files/src/turbidity_currents/images/avalanche_annotated_0.svg){fig-align="center"}
+
+![](index_files/src/turbidity_currents/images/avalanche_annotated.svg){.fragment fig-align="center"}
+:::
+:::
+
+## A simple analogue subaqueous experiment: lock-release devices
+
+::: {.columns .v-center-container}
+::: {.column .rotatemiror width="100%"}
+![Particles: glass beads ($d \sim 120 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](index_files/src/turbidity_currents/video/run03_sand80m.mp4){width="85%" fig-align="center"}
+:::
+:::
+
+::: footer
+Gadal et al. (2023) *"Slumping regime in lock-release turbidity currents"*
+:::
+
+## Many processes to investigate
+
+::: columns
+::: {.column width="100%"}
+![](index_files/src/turbidity_currents/figures/sketches_general.svg){fig-align="center"}
+:::
+:::
+
+**Processes and regimes:**
+
+::: columns
+::: {.column width="35%"}
+-   global slope: $\alpha$
+-   settling: $\mathcal{S}t = \displaystyle\frac{\rm settling}{\rm inertia}$
+-   bottom roughness
+:::
+
+::: {.column width="35%"}
+-   particle/particle interactions: $\phi$
+
+-   dissipation: $\mathcal{R}e = \displaystyle\frac{\rm inertia}{\rm viscosity}$
+
+-   bottom topography
+:::
+
+::: {.column width="20%"}
+-   internal structure
+
+-   interfacial mixing
+
+-   ...
+:::
+:::
+
+## Systematic exploration of the parameter space
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+$\rightarrow$ collaboration between IMFT, LEGI and LEMTA
+
+![](index_files/src/turbidity_currents/figures/parameter_space.svg){fig-align="center" style="margin-top:2%"}
+:::
+:::
+
+::: footer
+Gadal et al. (in review) *"Chapter 16: Particle-laden gravity currents: the lock-release slumping
+regime at the laboratory scale"*
+:::
+
+
+## One example: the influence of the global slope
+
+$\bullet$ PMMA particles, $\phi \sim 1~\%$
+
+::: {.columns .v-center-container style="height:80%"}
+::: {.column width="50%"}
+::: {.columns .v-center-container}
+::: {.column .small width="15%"}
+$\alpha = 0^\circ$
+:::
+
+::: {.column width="85%"}
+![@Marie Rastello, LEGI](index_files/src/turbidity_currents/video/PMMA_0degre_crop_X2.5.mp4){width="80%" fig-align="center"}
+:::
+:::
+
+::: {.columns .v-center-container}
+::: {.column .small width="15%"}
+$\alpha = 45^\circ$
+:::
+
+::: {.column width="85%"}
+![@Marie Rastello, LEGI](index_files/src/turbidity_currents/video/PMMA2_sans_fond.mp4){width="80%" fig-align="center"}
+:::
+:::
+:::
+
+::: {.column width="50%"}
+![](index_files/src/turbidity_currents/figures/figure_nose_position_slope.svg){.fragment fragment-index="1" fig-align="center"}
+:::
+:::
+
+## One example: the influence of the global slope
+
+![](index_files/src/turbidity_currents/figures/figure_slope.svg){fig-align="center"}
+
+::: {style="text-align: center"}
+[$\rightarrow$ not yet reproducible by current depth-averaged models]{.boxed-orange}
+:::
+
+## In a nutshell
+
+::: columns
+::: {.column width="50%"}
+::: {.callout-warning appearance="minimal"}
+# Front dynamics
+
+![](index_files/src/turbidity_currents/figures/bulk_position.svg){fig-align="center"}
+
+::: columns
+::: {.column width="25%"}
+-   general slope
+:::
+
+::: {.column width="20%"}
+-   settling
+:::
+
+::: {.column width="30%"}
+-   volume fraction
+:::
+
+::: {.column width="25%"}
+-   viscosity
+:::
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+::: {.callout-note appearance="minimal"}
+# Current shape, fluctuations, and link with the dynamics
+
+![](index_files/src/turbidity_currents/figures/figure_single_shape.svg){fig-align="center"}
+:::
+:::
+
+::: fragment
+::: {.callout-note appearance="minimal"}
+# Internal structure, particle buoyancy and particle/turbulence interaction
+
+::: columns
+::: {.column style="margin-bottom:0; width:42%"}
+![](index_files/src/turbidity_currents/video/manip_JEAN_5.gif){style="margin-bottom:0"}
+:::
+
+::: {.column style="margin-bottom:0; width:58%"}
+![](index_files/src/turbidity_currents/figures/figure_internal_structure.svg){style="margin-bottom:0"}
+:::
+:::
+:::
+:::
+:::
+:::
+
+::: footer
+Gadal et al. (2023) *"Slumping regime in lock-release turbidity currents"*, Gadal et al. (in review) *"Chapter 16: Particle-laden gravity currents: the lock-release slumping regime at the laboratory scale"*
+:::
+
+## Back to the field: depth-averaged models
+
+:::: {.columns .v-center-container}
+::: {.column width="46%"}
+![Pyroclastic flow, 2010 Merapi eruption (Jelfoun et al. 2017)](index_files/src/turbidity_currents/video/Kelfoun2017_pyroclastic_flow_simu.mp4){loop="" data-autoplay=""}
+:::
+
+::: {.column width="54%"}
+![Turbidity current on a real topography. @Hajime Naruse](index_files/src/turbidity_currents/video/turbidity_current_Hajime_NARUSE.mp4){loop="" data-autoplay=""}
+:::
+:::
+
+
+## Back to the field: depth-averaged models
+
+::: columns
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="20%"}
+![](index_files/src/turbidity_currents/video/Kelfoun2017_pyroclastic_flow_simu.mp4){loop="" data-autoplay=""}
+:::
+
+::: {.column width="25%"}
+![](index_files/src/turbidity_currents/video/turbidity_current_Hajime_NARUSE.mp4){loop="" data-autoplay=""}
+:::
+
+::: {.column width="9.465%"}
+
+::: {style="border-right: 0px solid black;"}
+<br>
+<br>
+<br>
+<br>
+:::
+
+:::
+:::
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width=65%}
+
+::: {.spaced_list style="border-right: 0px solid black;"}
+- mass: $\displaystyle\frac{\partial h}{\partial t} + \displaystyle\frac{\partial}{\partial x}[h u]  = E\vert u\vert - V_{\rm s}$
+- particle: $\displaystyle\frac{\partial \phi h}{\partial t} + \displaystyle\frac{\partial}{\partial x}[h u \phi]  = - V_{\rm s} \phi$
+- momentum: $\displaystyle\frac{\partial}{\partial t}[h u] + \displaystyle\frac{\partial}{\partial x}\left[ h u^{2} + \displaystyle\frac{g'}{2}h^{2} \right]  = -g'h\displaystyle\frac{\partial Z}{\partial x} - \mathcal{C}\vert u \vert u$
+:::
+:::
+
+::: {.column width=35%}
+<br>
+<br>
+
+:::
+
+::::
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width=65%}
+
+::: {style="border-right: 0px solid black;"}
+- front shock condition: $\displaystyle\frac{u_{\rm f}}{\sqrt{g'_{\rm f} h_{\rm f}}}  = \mathcal{F}(??)$
+:::
+
+:::
+
+::: {.column width=35%}
+
+
+:::
+::::
+
+## Back to the field: depth-averaged models
+
+::: columns
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="20%"}
+![](index_files/src/turbidity_currents/video/Kelfoun2017_pyroclastic_flow_simu.mp4){loop="" data-autoplay=""}
+:::
+
+::: {.column width="25%"}
+![](index_files/src/turbidity_currents/video/turbidity_current_Hajime_NARUSE.mp4){loop="" data-autoplay=""}
+:::
+
+::: {.column width="9.465%"}
+
+::: {style="border-right: 3px solid black;"}
+<br>
+<br>
+<br>
+<br>
+:::
+
+:::
+
+::: {.column width="30.5%"}
+<br>
+Calibration and assessment from our experiments
+
+:::
+
+:::
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width=65%}
+
+::: {.spaced_list style="border-right: 3px solid black"}
+- mass: $\displaystyle\frac{\partial h}{\partial t} + \displaystyle\frac{\partial}{\partial x}[h u]  = \color{lightblue}{E\vert u\vert} - \color{peru}{V_{\rm s}}$
+- particle: $\displaystyle\frac{\partial \phi h}{\partial t} + \displaystyle\frac{\partial}{\partial x}[h u \phi]  = - \color{peru}{V_{\rm s} \phi}$
+- momentum: $\displaystyle\frac{\partial}{\partial t}[h u] + \displaystyle\frac{\partial}{\partial x}\left[ h u^{2} + \displaystyle\frac{g'}{2}h^{2} \right]  = -\color{yellowgreen}{g'h\displaystyle\frac{\partial Z}{\partial x}} - \color{salmon}{\mathcal{C}\vert u \vert u}$
+:::
+:::
+
+::: {.column width=35%}
+<br>
+Front dynamics 
+
+::: {style="font-size:70%; margin-left:40px"}
+- [settling]{style="color: peru"}
+- [topography and slope]{style="color:yellowgreen"}
+- [mixing and entrainment]{style="color: lightblue"}
+- [dissipation]{style="color:salmon"}
+:::
+:::
+
+::::
+
+<hr>
+
+:::: {.columns}
+
+::: {.column width=65%}
+
+::: {style="border-right: 3px solid black;"}
+- front shock condition: $\displaystyle\frac{u_{\rm f}}{\sqrt{g'_{\rm f} h_{\rm f}}}  = \color{orange}{\mathcal{F}(??)}$
+:::
+
+:::
+
+::: {.column width=35%}
+
+[Correlation: dynamics and current front shape]{style="color: orange"}
+
+:::
+::::
+
+## From particle-laden currents to riverbed clogging
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+
+![Photograph of the Sanmenxia Dam during silt flushing (@Imaginechina Limited/Alamy)](index_files/src/Sanmenxia-Dam-discharging-water-due-to-the-flood-peak-at-the-upstream-of-the-Yellow-River_Alamy_2CTKEJ4-1400x959.jpg){fig-align=center width=65%}
+
+
+:::
+:::
+
+# Particle flow in porous media: the example of riverbed clogging
+
+::: {style="margin-top:100px;"}
+![Underwater view of the River Tara riverbed, in Montenegro. (@LiquiArt)](index_files/src/OFB_clogging/images/Tara_River_Underwater.jpg){height="500px" fig-align="center"}
+:::
+
+## Riverbed clogging -- General questions
+
+::: columns
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+-  [Risks, Land management]{.highlight-blue}: flood, impacts of dam presence
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+-   [Ecosystem preservation]{.highlight-blue}: life, transfer across the riverbed (pollution, nutrients)
+:::
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+<!-- ::: {style="text-align: center;"} -->
+
+![Photograph of the Sanmenxia Dam during silt flushing. (@RolfMueller)](index_files/src/OFB_clogging/images/Sanmenxia_dam_silt_flushing.jpg){height="400px"}
+
+<!-- ::: -->
+:::
+
+::: {.column width="50%"}
+<!-- ::: {style="text-align: center;"} -->
+
+![Salmon eggs buried in riverbed gravels. (@Olympic National Park)](index_files/src/OFB_clogging/images/Salmon_eggs_river_gravel_NPS_Photo_(2)_(22927373645).jpg){height="400px"}
+
+<!-- ::: -->
+:::
+:::
+
+::: {.fragment style="max-width: 60%; margin: 0 auto;"}
+<!-- ::: {style="text-align: center;"} -->
+
+-   Fundamental questions:
+    -   clogging and unclogging (if possible ?) [thresholds]{.highlight-blue}
+    -   [spatio-temporal]{.highlight-blue} dynamics
+    -   particle dynamics inside the porous media
+
+<!-- ::: -->
+:::
+
+## Riverbeds as a complex system
+
+:::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+![Main factors affecting riverbed clogging. Modified from Dubuis & Cesare 2023.](index_files/src/OFB_clogging/images/sketch_river_process.svg)
+
+:::
+::::
+
+## A simplified analogue experiment
+
+![](index_files/src/OFB_clogging/figures/expe_set-up_annoted.svg){fig-align="center" style="margin-bottom:0"}
+
+## A simplified analogue experiment
+
+![](index_files/src/OFB_clogging/figures/expe_set-up_annoted.svg){fig-align="center" style="margin-bottom:0"}
+
+<hr style="width:85%">
+
+:::: {.columns style='margin-top:0; font-size:80%'}
+
+::: { .column width=20%}
+
+- injection:
+  - flow rate, $Q$
+  - volume fraction, $\phi_{0}$
+:::
+
+::: { .column width=17.5%}
+
+- particle properties:
+  - density $\rho_{\rm p}$
+  - size $d_{\rm p}$
+
+:::
+
+::: {.column width=17.5%}
+
+- porous matrix:
+  - hydrogel bead size $d_{\rm h}$ 
+
+:::
+::: {.fragment fragment-index=1 .column width=1%}
+::: {style="border-right: 3px solid black;"}
+
+<br>
+<br>
+<br>
+<br>
+
+:::
+:::
+
+::: {.fragment fragment-index=1 .column width=24%}
+
+- Settling: $\mathcal{P} = \displaystyle\frac{\textrm{settling}}{\textrm{turbulence}}$
+
+:::
+::: {.fragment fragment-index=1 .column width=17.5%}
+
+- Infiltration: $\mathcal{I} = \displaystyle\frac{d_{\rm p}}{d_{\rm h}}$
+- ...
+
+:::
+
+::::
+
+
+## One example: unimpeded infiltration $d_{\rm p} \ll d_{\rm h}$
+
+![An experiment (accelerated x5).](index_files/src/OFB_clogging/videos/video.mp4){width=80%}
+
+::: {.r-stack}
+
+:::: {.columns}
+
+::: {.column width=50%}
+::: {.fragment fragment-index=0}
+::: {.fragment .semi-fade-out fragment-index=2}
+
+::: {.callout-warning appearance="minimal"}
+## Suspended part
+
+![](index_files/src/OFB_clogging/figures/fig_udv_data.svg){fig-align="center"}
+
+:::
+
+:::
+:::
+:::
+
+::: {.column width=50%}
+::: {.fragment fragment-index=1}
+::: {.fragment .semi-fade-out fragment-index=2}
+
+::: {.callout-tip appearance="minimal"}
+## Porous matrix
+
+![](index_files/src/OFB_clogging/figures/figure_infiltration_front_velocity.svg){fig-align="center"}
+
+:::
+
+:::
+:::
+:::
+
+::::
+
+
+::: {.fragment fragment-index="2" style="text-align:center; width:100%"}
+::: {.transparent-background style="padding:1%"}
+Parameter space exploration remains to be done!
+:::
+:::
+
+:::
+
+# fake new section {visibility="hidden"}
+
+## Future project: Evolution of consolidated surfaces under a flowing granular media
+
+:::: {.columns}
+
+::: {.column .vcentered width=50%}
+::: {.callout-warning appearance="minimal"}
+# Ripples, waves, stripes
+
+::: {layout="[[1.25,1], [1]]"}
+
+![Wear pattern in a pipe [Karimi et al. 1992]](index_files/src/morpho_conso_surfaces/pattern_pipe.svg){fig-align="center"}
+
+![Ventifacts on Mars [Laity et al. 2009]](index_files/src/morpho_conso_surfaces/ventifact.svg){fig-align="center"}
+
+![Yardangs in China [Wang 2020]](index_files/src/morpho_conso_surfaces/yardangs.svg){fig-align="center"}
+
+:::
+
+:::
+:::
+
+::: {.column .vcentered width=50%}
+::: {.callout-warning appearance="minimal"}
+## Channels
+
+:::: {.columns}
+
+::: {.column width=41.25%}
+![Debris-flow channel [Morino, et al. 2019]](index_files/src/morpho_conso_surfaces/avalanche_channel.svg){fig-align="center" width=100%}
+:::
+
+::: {.column width=58.75%}
+![Turbidity current channel [Deptuck et al. 2007]](index_files/src/morpho_conso_surfaces/turbidity_current_channel.svg){fig-align="center" width=100%}
+:::
+
+::::
+
+:::
+:::
+
+::::
+
+## Thank you! {background-image="index_files/src/dunes/images/DunePanorama_small.jpg"}
+
+::: {style="text-align:center; font-weight=bolder;background: rgba(255, 255, 255, 0.65)"}
+Contact me: cyril.gadal@imft.fr
+:::
+
+:::: {.columns}
+
+::: {.column .vcentered width=50%"}
+::: {.callout-note appearance="minimal"}
+## Dunes
+
+::: {style="font-size:smaller"}
+
+- Clément Narteau (IPGP) & Philippe Claudin (PMMH) for everything during my PhD
+- Olivier Rozier (IPGP) for his support with the numerical simulations
+- Sylvain Courrech du Pont (MSC - Univ. Paris) for his help with the experiments
+- Laurie Barrier (IPGP) for the great discussions on eolian landforms
+- Ryan C. Ewing (Texas A&M Univ.), Douglas Jerolmack (Univ. Pennsylvania) and Andrew Gunn (Univ.
+Pennsylvania) for providing the field data used in the study of White Sands.
+- Pauline Delorme (Univ. Southampton), Giles W.S. Wiggs (Univ. Oxford), Matthew Baddock (Loughborough Univ.) for their collaboration in the study of the Namib Sand Sea.
+and Jo M. Nield (Univ. Southampton)
+- Xin Gao (Chinese Acad. Sciences) for organizing and managing our field trip through the Taklamacan desert in China.
+- many others
+
+:::
+:::
+:::
+
+::: {.column .vcentered width=50%}
+::: {.callout-note appearance="minimal"}
+## Particle-laden gravity currents and Riverbed clogging
+
+::: {style="font-size:smaller"}
+
+
+- Laurent Lacaze, Matthieu Mercier (IMFT) for everything at IMFT
+- The PALAGRAM consortium, and more specifically Marie Rastello (LEGI), Julien Chauchat (LEGI) and Jean Schneider (LEMTA) for the help in creating our big inter-lab dataset
+- Jean-Dominique (IMFT) for the technical support on the experiments
+
+:::
+:::
+:::
+
+
+
+::::
