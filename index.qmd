@@ -142,7 +142,7 @@ format:
 ::: {.callout-note appearance="minimal"}
 ## Fundamental knowledge
 
-- interaction between process
+- interaction between processes
 - analytical models
 - ...
 
@@ -356,7 +356,7 @@ Gadal et al. (2020) *"Spatial and temporal development of incipient dunes"*, Lü
 
 ::::
 
-{{< fa solid triangle-exclamation >}} only **analogue** to eolian dunes, i.e fluid viscosity is different (hydrodynamic, $\mathcal{R}e_{\rm p}, transport modes)$!
+{{< fa solid triangle-exclamation >}} only **analogue** to eolian dunes, i.e fluid viscosity is different (hydrodynamic, $\mathcal{R}e_{\rm p}$, transport modes)!
 
 
 ::: footer
